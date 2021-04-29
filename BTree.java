@@ -6,6 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+import com.fanfish.app.model.Student;
+
 /**
  * An Implementation of the B-Tree Data Structure (excluding delete operation)
  * 
@@ -169,8 +171,7 @@ public class BTree<T> {
 		int next = offset(arrKeys, key);
 		List<Node> children = node.children;
 		Node[] arrChildren = children.toArray(new Node[0]);
-		Node[] newArrChildren = null;
-		newArrChildren = new Node[arrChildren.length + 1];
+		Node[] newArrChildren = new Node[arrChildren.length + 1];
 		System.arraycopy(arrChildren, 0, newArrChildren, 0, next);
 		System.arraycopy(arrChildren, next + 1, newArrChildren, next + 2, arrChildren.length - next - 1);
 		if (newRight != null) {
